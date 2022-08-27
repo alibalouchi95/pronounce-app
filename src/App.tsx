@@ -8,7 +8,7 @@ function App() {
   return (
     <Routes>
       {/* <Route path='/pronounce-app' element={<Navigate to="/" />} /> */}
-      <Route path='/'>
+      <Route path='/pronounce-app'>
         <Route index element={<Home />} />
         <Route path='/collection/:collectionName' element={<Collection />} />
       </Route>
