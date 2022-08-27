@@ -3,3 +3,8 @@
   [headers.values]
     app_id = "80d25e40"
     app_key = "525bbe4a6333dc13b43e2dbb8b9cf996"
+
+  for = "/collection/*"
+  [headers.values]
+    app_id = "80d25e40"
+    app_key = "525bbe4a6333dc13b43e2dbb8b9cf996"
