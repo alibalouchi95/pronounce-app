@@ -8,10 +8,8 @@ function App() {
   return (
     <Routes>
       {/* <Route path='/pronounce-app' element={<Navigate to="/" />} /> */}
-      <Route path='/pronounce-app'>
-        <Route index element={<Home />} />
-        <Route path='/collection/:collectionName' element={<Collection />} />
-      </Route>
+      <Route path='/pronounce-app' element={<Home />} />
+      <Route path='/pronounce-app/collection/:collectionName' element={<Collection />} />
     </Routes>
   );
 }
