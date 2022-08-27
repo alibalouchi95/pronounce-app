@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "https://od-api.oxforddictionaries.com/api/v2",
-  "homepage":"https://alibalouchi.95.github.io/pronounce-app",
+  "homepage":"https://alibalouchi95.github.io/pronounce-app",
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
