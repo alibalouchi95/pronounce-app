@@ -42,7 +42,7 @@ export const API_CALL = {
 
     try {
       const res = await axios.get(
-        `https://od-api.oxforddictionaries.com/api/v2/entries/en-us/${word}`,
+        `/entries/en-us/${word}`,
       );
       const results: Array<Word> = [];
       const _res = cleanResult(res.data);
@@ -52,7 +52,7 @@ export const API_CALL = {
         : (result = 'The word is not found');
     } catch (e: any) {
       console.log({e});
-      result = 'There is a problem with API';
+      result = 'There is a problem with Dictionary API';
     }
 
     return result;
