@@ -52,7 +52,7 @@ export const API_CALL = {
         : (result = 'The word is not found');
     } catch (e: any) {
       console.log({e});
-      result = 'There is a problem with Dictionary API';
+      result = 'There is a problem with API';
     }
 
     return result;
