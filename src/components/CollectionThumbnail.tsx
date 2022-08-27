@@ -56,7 +56,7 @@ const CollectionThumbnail = ({
   const classes = useStyles()
 
   return (
-    <a key={collection.name} href={`/collection/${collection.name}`} className={classes.thumbnail}>
+    <a key={collection.name} href={`pronounce-app/collection/${collection.name}`} className={classes.thumbnail}>
       <Typography className={classes.collectionTitle}>
         {collection.name}
       </Typography>
