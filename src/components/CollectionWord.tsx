@@ -1,6 +1,6 @@
-import { Button, Card, CardActions, CardContent, Typography } from '@mui/material';
+import { Button, CardActions, CardContent, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Word } from '../types';
 
 type Props = { word: Word; removeWord: (inp: string) => void };
@@ -63,43 +63,6 @@ const CollectionWord = ({ word: { word, pronounciation }, removeWord }: Props) =
         >Play</Button>
       </CardActions>
     </div>
-    // <div className='container'>
-    //   <div className='header'>
-    //     <button
-    //       onClick={() => removeWord(word)}
-    //       style={{
-    //         width: 5,
-    //         height: 5,
-    //         display: 'flex',
-    //         flexDirection: 'row',
-    //         justifyContent: 'flex-end',
-    //         alignItems: 'center',
-    //       }}>
-    //       <img
-    //         style={{width: 30, height: 30}}
-    //         src='../assets/close-icons/icons8-close-67.png'
-    //       />
-    //     </button>
-    //     <span className='word'>{word}</span>
-    //     <span className='pronounciation'>{pronounciation.text}</span>
-    //   </div>
-    //   <button
-    //     onClick={() => {
-    //       setPlaying(true);
-    //       audio.play()}}>
-    //     <img
-    //       style={{
-    //         marginLeft: 8,
-    //         color: playing ? '#004BA8' : '#24272B',
-    //       }}
-    //       src={
-    //         audio.ended
-    //           ? '../assets/play-icons/play-button-circled-50-blue.png'
-    //           : '../assets/play-icons/play-button-circled-50-black.png'
-    //       }
-    //     />
-    //   </button>
-    // </div>
   );
 };
 

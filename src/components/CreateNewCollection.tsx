@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, TextField } from '@mui/material';
+import { Card, CardContent, TextField } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import React, { useState } from 'react'
 import { addNewCollection } from '../storage';

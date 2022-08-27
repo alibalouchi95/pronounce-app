@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import CollectionThumbnails from '../components/CollectionThumbnail';
-import { Collection, CollectionThumbnail } from '../types';
-import { addNewCollection, deleteDB, getCollections } from '../storage';
-import plusIcon from '../assets/plus-icons/icons8-plus-128.png'
-import closeIcon from '../assets/close-icons/icons8-close-67.png'
+import { Collection } from '../types';
+import {  getCollections } from '../storage';
 import { useModal } from 'global-modal';
-import { AlertPropsVariantOverrides, Box, Button, Paper, Typography } from '@mui/material';
+import { Box} from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import CreateNewCollection from '../components/CreateNewCollection';
 

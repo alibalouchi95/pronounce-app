@@ -3,7 +3,6 @@ import CollectionWord from '../components/CollectionWord';
 // import NewWord from '../components/NewWord';
 import { Word } from '../types';
 import {
-  addNewWordToCollection,
   getCollection,
   removeWordFromCollection,
 } from '../storage';
