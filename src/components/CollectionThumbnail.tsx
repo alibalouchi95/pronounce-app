@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Paper, Link, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import { Collection } from '../types';
 import { cleanDate } from '../utils';
@@ -56,7 +57,7 @@ const CollectionThumbnail = ({
   const classes = useStyles()
 
   return (
-    <a key={collection.name} href={`pronounce-app/collection/${collection.name}`} className={classes.thumbnail}>
+    <Link key={collection.name} to={`/collection/${collection.name}`} className={classes.thumbnail}>
       <Typography className={classes.collectionTitle}>
         {collection.name}
       </Typography>
@@ -66,7 +67,7 @@ const CollectionThumbnail = ({
       <Typography className={classes.collectionDate}>
         {cleanDate(collection.date)}
       </Typography>
-    </a>
+    </Link>
   );
 };
 
