@@ -7,7 +7,7 @@ import Home from './pages/Home';
 function App() {
   return (
     <Routes>
-      <Route path='/pronounce-app' element={<Navigate to="/" />} />
+      {/* <Route path='/pronounce-app' element={<Navigate to="/" />} /> */}
       <Route path='/' element={<Home />} />
       <Route path='/collection/:collectionName' element={<Collection />} />
     </Routes>
