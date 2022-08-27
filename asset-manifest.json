@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/pronounce-app/static/css/main.073c9b0a.css",
-    "main.js": "/pronounce-app/static/js/main.00bfd33b.js",
+    "main.js": "/pronounce-app/static/js/main.3d504d99.js",
     "static/js/787.f866fccd.chunk.js": "/pronounce-app/static/js/787.f866fccd.chunk.js",
     "index.html": "/pronounce-app/index.html",
     "main.073c9b0a.css.map": "/pronounce-app/static/css/main.073c9b0a.css.map",
-    "main.00bfd33b.js.map": "/pronounce-app/static/js/main.00bfd33b.js.map",
+    "main.3d504d99.js.map": "/pronounce-app/static/js/main.3d504d99.js.map",
     "787.f866fccd.chunk.js.map": "/pronounce-app/static/js/787.f866fccd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.00bfd33b.js"
+    "static/js/main.3d504d99.js"
   ]
 }
