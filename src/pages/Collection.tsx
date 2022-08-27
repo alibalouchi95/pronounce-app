@@ -11,6 +11,7 @@ import { useParams } from 'react-router-dom';
 import { useModal } from 'global-modal';
 import CreateNewWord from '../components/CreateNewWord';
 import { makeStyles } from '@mui/styles';
+import { Box } from '@mui/material';
 
 const useStyles = makeStyles({
   createNewWord: {
@@ -32,33 +33,46 @@ const useStyles = makeStyles({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  container: {
+    width: "95%",
+    display: "flex",
+    flexWrap: "wrap",
+    margin: 15,
+    padding: 10
+  }
 });
 
 const Collection = () => {
-  const [newData, setNewData] = useState<Word>();
   const [collectionWords, setCollectionWords] = useState<Array<Word>>([]);
-  const [date, setDate] = useState<Date>();
+  const [collectionDate, setCollectionDate] = useState<Date |string>()
   const { collectionName } = useParams<{ collectionName: string }>();
   const classes = useStyles()
 
   const { show, close, visible } = useModal(<CreateNewWord collectionName={collectionName!} close={() => close()} />)
 
-  if (!collectionName) return null
+  const _getData = async (collectionName: string) => {
+    const collection = await getCollection(collectionName)
+    if(collection?.words){
+      setCollectionWords(collection?.words)
+    }
+      setCollectionDate(collection?.date)
+  }
+
+  useEffect(() => {
+    if(collectionName)
+    _getData(collectionName)
+  }, [visible])
 
 
-  const removeWord = (word: string) => {
-    removeWordFromCollection(collectionName, word);
-    const collection = getCollection(collectionName);
-    console.log({ collection })
-    // if (collection) {
-    //   const {words, date} = collection;
-    //   if (words && typeof words !== 'string') setCollectionWords(words);
-    //   if (date) setDate(date);
-    // }
+  const removeWord = async (word: string) => {
+    if(collectionName){
+      await removeWordFromCollection(collectionName, word);
+      await _getData(collectionName)
+    }
   };
 
   return (
-    <div>
+    <Box className={classes.container}>
       {collectionWords
         ? collectionWords.map(word => (
           <CollectionWord
@@ -73,7 +87,7 @@ const Collection = () => {
         onClick={show}>
         <span className={classes.createNewWordText}>Create new</span>
       </button>
-    </div>
+    </Box>
   );
 };
 

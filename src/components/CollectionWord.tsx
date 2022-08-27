@@ -1,35 +1,68 @@
 import { Button, Card, CardActions, CardContent, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import React, { useEffect, useState } from 'react';
 import { Word } from '../types';
 
-// "https://api.dictionaryapi.dev/media/pronunciations/en/water-uk.mp3"
-
 type Props = { word: Word; removeWord: (inp: string) => void };
+
+const useStyles = makeStyles({
+  container: {
+    backgroundColor: '#24272B',
+    padding: 10,
+    margin: 10,
+    width: "200px",
+    height: "150px",
+    borderRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  header: {
+    color: "#FFFFFF",
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    alignItems: 'flex-start',
+    marginLeft: 20,
+  },
+  pronounciation: {
+    fontSize: 16,
+    color: "#FFFFFF",
+  },
+  word: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: "#FFFFFF",
+  },
+});
 
 const CollectionWord = ({ word: { word, pronounciation }, removeWord }: Props) => {
   const audio = new Audio(pronounciation.audio);
 
+  const classes = useStyles()
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <div className={classes.container}>
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography className={classes.word} gutterBottom variant="h5" component="div">
           {word}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography className={classes.pronounciation} variant="body2">
           {pronounciation.text}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small" onClick={
-          audio.play
-        } color={
-          audio.ended
-            ? 'primary'
-            : 'warning'
-        }>Play</Button>
+        <Button size="small" color='error' onClick={() => removeWord(word)}>Delete</Button>
+        <Button size="small" onClick={() => audio.play()}
+        >Play</Button>
       </CardActions>
-    </Card>
+    </div>
     // <div className='container'>
     //   <div className='header'>
     //     <button
@@ -69,37 +102,5 @@ const CollectionWord = ({ word: { word, pronounciation }, removeWord }: Props) =
     // </div>
   );
 };
-
-// const styles = StyleSheet.create({
-//   container: {
-//     backgroundColor: '#FFFFFF',
-//     padding: 10,
-//     margin: 10,
-//     width: '95%',
-//     height: 100,
-//     borderColor: '#004BA8',
-//     borderWidth: 1.5,
-//     borderRadius: 20,
-//     alignItems: 'center',
-//     display: 'flex',
-//     flexDirection: 'row',
-//     justifyContent: 'space-between',
-//   },
-//   header: {
-//     height: '100%',
-//     display: 'flex',
-//     flexDirection: 'column',
-//     justifyContent: 'space-evenly',
-//     alignItems: 'flex-start',
-//     marginLeft: 20,
-//   },
-//   pronounciation: {
-//     fontSize: 16,
-//   },
-//   word: {
-//     fontSize: 25,
-//     fontWeight: 'bold',
-//   },
-// });
 
 export default CollectionWord;

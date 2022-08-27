@@ -48,22 +48,23 @@ export const removeWordFromCollection = async (
   collectionName: string,
   word: string,
 ) => {
-//   const collection = await storage.collections.get(collectionName);
-//   if (collection&& collection.words) {
-//       const words = collection.words.filter((_word: Word) => _word.word !== word);
-//       storage.collections.add({...collection, words}, collectionName);
-//   }
+  const collections = await storage.collections.where({name: collectionName}).toArray()
+  if (collections && collections.length > 0) {
+    const collection = collections[0]
+      const words = collection.words.filter((_word: Word) => _word.word !== word);
+      await storage.collections.update(collection, {words});
+  }
 };
 
 export const getCollections = async () => {
   return await storage.collections.toArray()
 };
 
-export const getCollection = (collectionName: string) => {
-//   const collection = storage.getString(collectionName);
-//   if (collection)
-//     return {
-//       words: JSON.parse(collection).words,
-//       date: JSON.parse(collection).date,
-//     };
+export const getCollection = async (collectionName: string) => {
+  const collections = await storage.collections.where({name: collectionName}).toArray()
+  if (collections && collections.length > 0)
+    return {
+      words: collections[0].words,
+      date: collections[0].date,
+    };
 };
