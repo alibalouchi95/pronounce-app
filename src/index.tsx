@@ -12,9 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ModalProvider>
-      <HashRouter>
-        <App />
-      </HashRouter>
+      <App />
     </ModalProvider>
   </React.StrictMode>
 );

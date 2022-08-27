@@ -1,16 +1,16 @@
 import React from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import './App.css';
 import Collection from './pages/Collection';
 import Home from './pages/Home';
 
 function App() {
   return (
-    <Routes>
+    <HashRouter basename='pronounce-app'>
       {/* <Route path='/pronounce-app' element={<Navigate to="/" />} /> */}
-      <Route path='/pronounce-app' element={<Home />} />
-      <Route path='/pronounce-app/collection/:collectionName' element={<Collection />} />
-    </Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/collection/:collectionName' element={<Collection />} />
+    </HashRouter>
   );
 }
 
