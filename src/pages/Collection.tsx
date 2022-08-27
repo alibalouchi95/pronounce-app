@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import CollectionWord from '../components/CollectionWord';
-// import NewWord from '../components/NewWord';
 import { Word } from '../types';
 import {
   getCollection,
@@ -43,7 +42,6 @@ const useStyles = makeStyles({
 
 const Collection = () => {
   const [collectionWords, setCollectionWords] = useState<Array<Word>>([]);
-  const [collectionDate, setCollectionDate] = useState<Date |string>()
   const { collectionName } = useParams<{ collectionName: string }>();
   const classes = useStyles()
 
@@ -54,13 +52,12 @@ const Collection = () => {
     if(collection?.words){
       setCollectionWords(collection?.words)
     }
-      setCollectionDate(collection?.date)
   }
 
   useEffect(() => {
     if(collectionName)
     _getData(collectionName)
-  }, [visible])
+  }, [visible, collectionName])
 
 
   const removeWord = async (word: string) => {

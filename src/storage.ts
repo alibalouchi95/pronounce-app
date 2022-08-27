@@ -1,4 +1,4 @@
-import {CollectionThumbnail, Word} from './types';
+import {Word} from './types';
 import { db as storage } from './db';
 
 export const deleteDB = () => {

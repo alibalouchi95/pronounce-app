@@ -1,9 +1,8 @@
 import axios from 'axios';
-import {GetWordResult, Word, WordData} from './types';
+import {GetWordResult, Word} from './types';
 
 export const cleanResult = (res: GetWordResult): Word | string | undefined => {
   const results: Array<Word> = [];
-  let result;
   if (res.results) {
     for (const _res of res.results) {
       if (_res.lexicalEntries)
