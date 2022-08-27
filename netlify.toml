@@ -1,0 +1,11 @@
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+
+  [headers.values]
+    app_id = "80d25e40"
+    app_key = "525bbe4a6333dc13b43e2dbb8b9cf996"
+
+    # Basic-Auth allows you to password protect your whole site.
+    # This feature may not be available on all plans.
