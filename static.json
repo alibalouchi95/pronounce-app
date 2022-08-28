@@ -1,11 +1,13 @@
 {
     "headers": {
       "/**": {
-        "Access-Control-Allow-Origin": "*"
+        "Access-Control-Allow-Origin": "*",
+        "app_id": "80d25e40",
+        "app_key": "525bbe4a6333dc13b43e2dbb8b9cf996"
       }
     },
     "proxies": {
-        "/*": {
+        "/collection/*": {
           "origin": "https://od-api.oxforddictionaries.com/api/v2"
         }
       }
