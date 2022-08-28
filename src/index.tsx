@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { ModalProvider } from 'global-modal';
 
 const root = ReactDOM.createRoot(
@@ -11,11 +11,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <HashRouter>
-      <ModalProvider>
+    <ModalProvider>
+      <BrowserRouter>
         <App />
-      </ModalProvider>
-    </HashRouter>
+      </BrowserRouter>
+    </ModalProvider>
   </React.StrictMode>
 );
 
