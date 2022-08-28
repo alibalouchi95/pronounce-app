@@ -36,6 +36,7 @@ export const API_CALL = {
     let result;
     axios.defaults.headers.common["app_id"] = "80d25e40"
     axios.defaults.headers.common["app_key"] = "525bbe4a6333dc13b43e2dbb8b9cf996"
+    axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*"
 
     try {
       const res = await axios.get(
