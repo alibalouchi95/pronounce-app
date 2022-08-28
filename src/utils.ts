@@ -40,7 +40,7 @@ export const API_CALL = {
 
     try {
       const res = await axios.get(
-        `https://od-api.oxforddictionaries.com/api/v2/entries/en-us/${word}`,
+        `/entries/en-us/${word}`,
       );
       const results: Array<Word> = [];
       const _res = cleanResult(res.data);

@@ -2,6 +2,7 @@
   "name": "pronounce-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://od-api.oxforddictionaries.com/api/v2",
   "engines": {
     "node": "v16.13.2",
     "npm": "8.1.2"
