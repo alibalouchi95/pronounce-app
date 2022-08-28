@@ -1,0 +1,12 @@
+{
+    "headers": {
+      "/**": {
+        "Access-Control-Allow-Origin": "*"
+      }
+    },
+    "proxies": {
+        "/*": {
+          "origin": "https://od-api.oxforddictionaries.com/api/v2"
+        }
+      }
+  }
